@@ -3,11 +3,12 @@ import { Container, Content, Text, Card, Header, Body, Button, Title, CardItem }
 import { increment, decrement } from '../actions/index.js';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import { }
 
 class Counter extends Component{
   render(){
+      console.log('props',this.props.navigation);
     const { navigate } = this.props.navigation;
+
     console.log(this.props.count);
     return(
       <Container>
@@ -30,7 +31,7 @@ class Counter extends Component{
                          <Button dark bordered onPress= {() => this.props.decrement()}>
                               <Text>Decrement</Text>
                           </Button>
-                          <Button onPress= {() => navigate("NextScreen")}>
+                          <Button onPress= {() => navigate('NextScreen')}>
                             <Text>NExtScreen </Text>
                           </Button>
                  </Content>
